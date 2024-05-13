@@ -1,0 +1,22 @@
+.jsonBoundary {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+   
+   
+  }
+
+  .jsonTitle{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 90vw;
+    margin: 20px;
+    height: 50px;
+    border: 2px solid grey;
+    font-size: larger;
+    font-weight: bolder;
+  }
+  .jsonTitle.seen {
+    background-color: lightgrey; 
+  }
