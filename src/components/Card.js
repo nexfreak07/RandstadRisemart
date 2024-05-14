@@ -5,6 +5,8 @@ const Card = ({ data, id, onSelectCard, seenTitles}) => {
       function handleClick() {
         onSelectCard(data);
       }
+      if(data.length <=0)
+        return null;
    
   return (
     <div className={styles.cardOuter} onClick={handleClick}>

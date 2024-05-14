@@ -84,7 +84,16 @@ function App() {
     <div>
       <Header setSearchTerm={setSearchText} />
       <div className={styles.card}>
-        {!searchTerm && Object.keys(albums).map((key)=> {  
+        {Object.keys(albums).map((key)=> {  
+          let newCardData = []
+          if(searchTerm){
+            console.log(albums[key])
+            newCardData = albums[key].filter((data)=> data.title.toLowerCase().includes(searchTerm.toLowerCase()))
+            console.log(newCardData);
+            // newCardData = albums[key].filter.toLowerCase().includes(searchTerm.toLowerCase());
+            return <Card key={key} id={key} data={newCardData} onSelectCard={handleSelectData} seenTitles={seenTitles[key] ?? 0}/>
+
+          }
           return <Card key={key} id={key} data={albums[key]} onSelectCard={handleSelectData} seenTitles={seenTitles[key] ?? 0}/>})}
 
       {selectedData && (
